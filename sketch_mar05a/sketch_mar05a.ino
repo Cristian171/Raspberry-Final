@@ -15,6 +15,12 @@ void salvar_mundo() {
 }
 
 void cuenta_regresiva() {
+      // Parpadeo del LED
+    static uint32_t previousTime = 0;
+    static bool ledState = true;
+        ledState = !ledState;
+        digitalWrite(LED_BUILTIN, ledState);
+    
     Serial.println("Comienza la cuenta regresiva:");
     for (int tiempo = 10; tiempo > 0; tiempo--) {
         Serial.println(tiempo);
@@ -30,18 +36,6 @@ void setup() {
 }
 
 void loop() {
-    // Parpadeo del LED
-    static uint32_t previousTime = 0;
-    static bool ledState = true;
-
-    uint32_t currentTime = millis();
-
-    if( (currentTime - previousTime) > 100){
-        previousTime = currentTime;
-        ledState = !ledState;
-        digitalWrite(LED_BUILTIN, ledState);
-    }
-
     // Verificar la secuencia ingresada por el usuario
     char secuencia[6];
     Serial.readBytes(secuencia, 6);
