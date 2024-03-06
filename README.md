@@ -33,7 +33,7 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 
 ```c++
 // Aquí va el código del programa
-
+```
 # Documentacion
 
 - [Documento Guia](https://silk-motion-e7d.notion.site/Unidad-1-Software-para-sistemas-embebidos-86760026bfac4e339e649191eedab500)
@@ -42,7 +42,4 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 
 Para realizar el programa se utilizo el programa de arduino, configurado para funcionar con el microcontrolador Raspberry pi pico y conectarlo al scriptcomunicator el cual es un monitor serial para ver lo que sucede en el programa una vez se empieza a ejecutar e interactuar con el mismo, siguiendo la guia que hay en el documento guia en notion previamente adjuntado.
 
-# Desarrollo 
-
-El codigo 
 
