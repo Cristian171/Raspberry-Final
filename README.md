@@ -1,7 +1,49 @@
 <h1 align="center">Raspberry Final</h1>
 
-# Descripcion 
-se nos pide hacer un programa el cual sera lo mas parecido a un cronometro pero en la configuracion inicial aparezca una opcion para modificar el tiempo preestablecido, haciendo que aumente o reduzca el tiempo en 1 sg dependiendo de la letra que se presione y con otra letra se active, al momento que se activa va a seguir la cuenta regresiva desde el valor configurado y habra una opcion para insertar una clave ya establecida, si el usuario o la persona que ingresa la clave se equivoca entonces la cuenta regresiva seguira su curso, en cambio si se introduce la clave correcta entonces aparecera un mensaje que dira "SALVASTE EL MUNDO" y se detendra la cuenta regresiva.
+![raspberry pi pico](https://github.com/vera-perez-upb/sfi-estudiantes-202310-Cristian171/assets/72422960/240579e4-f81e-494d-a8d8-cc9fdf89d539)
+# Cronómetro con Modificación de Tiempo y Clave de Rescate
+
+Este programa es una aplicación de cronómetro que permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para insertar una clave de rescate. Si la clave correcta se ingresa, se detendrá la cuenta regresiva y se mostrará un mensaje especial.
+
+## Características
+
+- Modificación del tiempo preestablecido: El usuario puede aumentar o reducir el tiempo en 1 segundo presionando una tecla específica.
+- Activación de la cuenta regresiva: Una vez que se establece el tiempo preestablecido y se activa el cronómetro, la cuenta regresiva comenzará.
+  
+## Uso
+
+1. Ejecute el programa.
+2. Seleccione la opción para modificar el tiempo preestablecido.
+3. Una vez que el tiempo preestablecido sea el deseado, active el cronómetro presionando otra tecla.
+4. Durante la cuenta regresiva, se le pedirá que ingrese una clave de rescate.
+5. Si ingresa la clave correcta, se detendrá la cuenta regresiva y se mostrará el mensaje "SALVASTE EL MUNDO".
+
+## Requisitos
+
+- Este programa se ejecuta en un entorno que admita la ejecución de aplicaciones de consola.
+- Se recomienda tener un teclado para interactuar con el programa.
+
+## Ejemplo de Código
+
+```c++
+# Aquí va el código del programa
+```
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Si tiene sugerencias de mejora, por favor, abra un problema o envíe una solicitud de extracción.
+
+## Autor
+
+Este programa fue creado por [Su Nombre] <correo@example.com>
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para obtener más detalles.
+
+---
+¡Gracias por usar nuestro programa! Esperamos que te sea útil. Si tienes alguna pregunta o problema, no dudes en contactarnos.
+
 
 # Documentacion
 
