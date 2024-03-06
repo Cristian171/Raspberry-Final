@@ -5,6 +5,11 @@
 
 Este programa es una aplicación de cronómetro que permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para insertar una clave de rescate. Si la clave correcta se ingresa, se detendrá la cuenta regresiva y se mostrará un mensaje especial.
 
+
+# Diagrama
+
+![Diagrama](file:///C:/Users/B09S112est/Downloads/WhatsApp%20Image%202024-03-06%20at%2008.22.55.jpeg)
+
 ## Características
 
 - Modificación del tiempo preestablecido: El usuario puede aumentar o reducir el tiempo en 1 segundo presionando una tecla específica.
