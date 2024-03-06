@@ -1,6 +1,4 @@
 #include <Arduino.h>
-#include "pico/stdlib.h"
-#include "hardware/uart.h"
 
 #define CLAVE_CORRECTA "1234"
 
@@ -18,30 +16,24 @@ void cuenta_regresiva() {
     Serial.println("Comienza la cuenta regresiva:");
     for (int tiempo = 10; tiempo > 0; tiempo--) {
         Serial.println(tiempo);
+        digitalWrite(LED_BUILTIN, HIGH); // Encender el LED
         delay(1000);  // Esperar un segundo
+        digitalWrite(LED_BUILTIN, LOW);  // Apagar el LED
     }
+    // Al final de la cuenta regresiva, encender el LED durante 3 segundos
+    digitalWrite(LED_BUILTIN, HIGH); // Encender el LED
+    delay(3000);  // Esperar tres segundos
+    digitalWrite(LED_BUILTIN, LOW);  // Apagar el LED
     Serial.println("¡El mundo ha sido destruido!");
 }
 
 void setup() {
     Serial.begin(9600);
     Serial.println("Inicio del programa");
-    pinMode(LED_BUILTIN, OUTPUT); // Configura el pin del LED incorporado como salida
+    pinMode(LED_BUILTIN, OUTPUT); // Configurar el pin del LED incorporado como salida
 }
 
 void loop() {
-    // Parpadeo del LED
-    static uint32_t previousTime = 0;
-    static bool ledState = true;
-
-    uint32_t currentTime = millis();
-
-    if( (currentTime - previousTime) > 100){
-        previousTime = currentTime;
-        ledState = !ledState;
-        digitalWrite(LED_BUILTIN, ledState);
-    }
-
     // Verificar la secuencia ingresada por el usuario
     char secuencia[6];
     Serial.readBytes(secuencia, 6);
@@ -51,4 +43,4 @@ void loop() {
     } else {
         cuenta_regresiva();
     }
-}
+} 
