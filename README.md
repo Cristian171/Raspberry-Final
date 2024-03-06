@@ -1,38 +1,38 @@
 <h1 align="center">Raspberry Final</h1>
 
-![raspberry pi pico](https://github.com/vera-perez-upb/sfi-estudiantes-202310-Cristian171/assets/72422960/240579e4-f81e-494d-a8d8-cc9fdf89d539)
-# Cronómetro con Modificación de Tiempo y Clave de Rescate
+<p align="center">
+  <img src="https://github.com/vera-perez-upb/sfi-estudiantes-202310-Cristian171/assets/72422960/240579e4-f81e-494d-a8d8-cc9fdf89d539" alt="raspberry pi pico">
+</p>
 
-Este programa es una aplicación de cronómetro que permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para insertar una clave de rescate. Si la clave correcta se ingresa, se detendrá la cuenta regresiva y se mostrará un mensaje especial.
+## Descripción
 
+Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico que permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para ingresar una clave de rescate que detendrá la cuenta regresiva si es correcta.
 
-# Diagrama
+## Diagrama
 
-![Diagrama](file:///C:/Users/B09S112est/Downloads/WhatsApp%20Image%202024-03-06%20at%2008.22.55.jpeg)
+![Diagrama](link-a-tu-diagrama)
 
 ## Características
 
-- Modificación del tiempo preestablecido: El usuario puede aumentar o reducir el tiempo en 1 segundo presionando una tecla específica.
-- Activación de la cuenta regresiva: Una vez que se establece el tiempo preestablecido y se activa el cronómetro, la cuenta regresiva comenzará.
-  
+- **Modificación del tiempo preestablecido:** Permite aumentar o reducir el tiempo en 1 segundo mediante una tecla específica.
+- **Activación de la cuenta regresiva:** Inicia la cuenta regresiva una vez establecido el tiempo preestablecido.
+
 ## Uso
 
 1. Ejecute el programa.
-2. Seleccione la opción para modificar el tiempo preestablecido.
-3. Una vez que el tiempo preestablecido sea el deseado, active el cronómetro presionando otra tecla.
-4. Durante la cuenta regresiva, se le pedirá que ingrese una clave de rescate.
-5. Si ingresa la clave correcta, se detendrá la cuenta regresiva y se mostrará el mensaje "SALVASTE EL MUNDO".
+2. Modifique el tiempo preestablecido según sea necesario.
+3. Active el cronómetro.
+4. Durante la cuenta regresiva, ingrese la clave de rescate si es necesario.
 
 ## Requisitos
 
-- Este programa se ejecuta en un entorno que admita la ejecución de aplicaciones de consola.
+- Entorno que admita la ejecución de aplicaciones de consola.
 - Se recomienda tener un teclado para interactuar con el programa.
 
 ## Ejemplo de Código
 
 ```c++
-# Aquí va el código del programa
-```
+// Aquí va el código del programa
 
 # Documentacion
 
