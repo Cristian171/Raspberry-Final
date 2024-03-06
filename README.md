@@ -29,22 +29,6 @@ Este programa es una aplicación de cronómetro que permite al usuario modificar
 # Aquí va el código del programa
 ```
 
-## Contribuciones
-
-Las contribuciones son bienvenidas. Si tiene sugerencias de mejora, por favor, abra un problema o envíe una solicitud de extracción.
-
-## Autor
-
-Este programa fue creado por [Su Nombre] <correo@example.com>
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para obtener más detalles.
-
----
-¡Gracias por usar nuestro programa! Esperamos que te sea útil. Si tienes alguna pregunta o problema, no dudes en contactarnos.
-
-
 # Documentacion
 
 - [Documento Guia](https://silk-motion-e7d.notion.site/Unidad-1-Software-para-sistemas-embebidos-86760026bfac4e339e649191eedab500)
