@@ -94,8 +94,6 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 ```
 - En esta función, se realiza la cuenta regresiva desde el tiempo de apertura configurado hasta cero. Durante el conteo, se verifica si se ha ingresado una clave para detener el conteo. Si se ingresa la clave correcta ('1234'), se desactiva el conteo y se cambia el estado a CONFIGURACION. Si el conteo llega a cero sin detenerse, se cambia el estado a RADIACTIVO.
 
-Hasta aquí se describe cómo se maneja el tiempo de apertura configurado y cómo se realiza la cuenta regresiva. Continuaré documentando el resto del código en otra respuesta.
-  
 # Documentacion
 
 - [Documento Guia](https://silk-motion-e7d.notion.site/Unidad-1-Software-para-sistemas-embebidos-86760026bfac4e339e649191eedab500)
