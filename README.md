@@ -100,6 +100,6 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 
 # Implementos
 
-Para realizar el programa se utilizo el programa de arduino, configurado para funcionar con el microcontrolador Raspberry pi pico y conectarlo al scriptcomunicator el cual es un monitor serial para ver lo que sucede en el programa una vez se empieza a ejecutar e interactuar con el mismo, siguiendo la guia que hay en el documento guia en notion previamente adjuntado.
+Para realizar el programa se utilizo el programa de arduino(RaspBerry pi pico) configurado conectarlo al scriptcomunicator el cual es un monitor serial para ver lo que sucede en el programa una vez se empieza a ejecutar e interactuar con el mismo, siguiendo la guia que hay en el documento guia en notion previamente adjuntado.
 
 
