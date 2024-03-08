@@ -32,8 +32,29 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 ## Ejemplo de Código
 
 ```c++
-// Aquí va el código del programa
+// void configurarTiempoApertura() {
+  Serial.println("CONFIG");
+  while (!configurado) {
+    if (Serial.available() > 0) {
+      char input = Serial.read();
+      if (input == 'S') {
+        tiempoApertura++;
+        if (tiempoApertura > 40) tiempoApertura = 40;
+      } else if (input == 'B') {
+        tiempoApertura--;
+        if (tiempoApertura < 1) tiempoApertura = 1;
+      } else if (input == 'L') {
+        configurado = true;
+        Serial.print("Tiempo configurado: ");
+        Serial.println(tiempoApertura);
+        estadoActual = CUENTA_REGRESIVA;
+      }
+    }
+  }
+}
+
 ```
+- Esta función permite al usuario configurar el tiempo de apertura mediante la comunicación serial. Mientras el sistema no esté configurado (configurado es false), el programa espera la entrada del usuario. Si se presiona 'S', aumenta el tiempo de apertura; si se presiona 'B', disminuye el tiempo de apertura; si se presiona 'L', se confirma el tiempo configurado y se cambia el estado a CUENTA_REGRESIVA.
 # Documentacion
 
 - [Documento Guia](https://silk-motion-e7d.notion.site/Unidad-1-Software-para-sistemas-embebidos-86760026bfac4e339e649191eedab500)
