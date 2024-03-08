@@ -10,7 +10,7 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 
 ## Diagrama
 
-![Diagrama](Diagrama.jpeg)
+![Diagrama](DiagramaUML.png)
 
 ## Características
 
