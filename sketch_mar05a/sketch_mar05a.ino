@@ -77,6 +77,7 @@ void contarTiempo() {
           conteoActivo = false; // Desactiva el conteo si la clave es correcta
           Serial.println("Clave correcta. Deteniendo el conteo.");
           estadoActual = CONFIGURACION;
+          configurado = false;
           return; // Salir de la función contarTiempo() después de detener el conteo
         }
       }
