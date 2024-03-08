@@ -1,8 +1,6 @@
 #include <SoftwareSerial.h>
 
-#define PIN_SUBIR 2 // Pin para el botón de subir tiempo
-#define PIN_BAJAR 3 // Pin para el botón de bajar tiempo
-#define PIN_CAMARA 4 // Pin para controlar la cámara
+
 
 SoftwareSerial serial(10, 11); // RX, TX
 
@@ -13,9 +11,7 @@ enum Estado { CONFIGURACION, CUENTA_REGRESIVA, RADIACTIVO };
 Estado estadoActual = CONFIGURACION;
 
 void setup() {
-  pinMode(PIN_SUBIR, INPUT_PULLUP);
-  pinMode(PIN_BAJAR, INPUT_PULLUP);
-  pinMode(PIN_CAMARA, OUTPUT);
+
 
   Serial.begin(9600);
 }
@@ -24,7 +20,7 @@ void loop() {
   switch (estadoActual) {
     case CONFIGURACION:
       if (!configurado) {
-        configurarTiempoApertura();
+       configurarTiempoApertura();
       }
       break;
     case CUENTA_REGRESIVA:
@@ -80,6 +76,7 @@ void contarTiempo() {
         if (strcmp(clave, "1234") == 0) {
           conteoActivo = false; // Desactiva el conteo si la clave es correcta
           Serial.println("Clave correcta. Deteniendo el conteo.");
+          estadoActual = CONFIGURACION;
           return; // Salir de la función contarTiempo() después de detener el conteo
         }
       }
@@ -97,10 +94,9 @@ void contarTiempo() {
 
 
 void emitirRadiacion() {
-  digitalWrite(PIN_CAMARA, HIGH);
+
   Serial.println("RADIACIÓN NUCLEAR ACTIVA");
   delay(2000);
-  digitalWrite(PIN_CAMARA, LOW);
   configurado = false;
   estadoActual = CONFIGURACION;
 }
