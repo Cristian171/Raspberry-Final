@@ -6,7 +6,7 @@
 
 ## Descripción
 
-Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico que permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para ingresar una clave de rescate que detendrá la cuenta regresiva si es correcta.
+Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico. Permite al usuario modificar el tiempo preestablecido antes de iniciar la cuenta regresiva. Además, incluye una opción para ingresar una clave correcta "Salva el mundo" que detendrá la cuenta regresiva.
 
 ## Diagrama
 
@@ -19,14 +19,17 @@ Este proyecto consiste en una aplicación de cronómetro para Raspberry Pi Pico 
 
 ## Uso
 
-1. Ejecute el programa.
-2. Modifique el tiempo preestablecido según sea necesario.
-3. Active el cronómetro.
-4. Durante la cuenta regresiva, ingrese la clave de rescate si es necesario.
+1. Ejecute el programa en arduino y lo enlazas con el puerto con el programa [scriptcommunicator](https://sourceforge.net/projects/scriptcommunicator/)
+2. Modifique el tiempo preestablecido según sea necesario con la tecla S y B (S para aunmentar y B para bajar el tiempo de 1s a 40s como limities)
+3. Active el cronómetro con la letra L.
+4. Durante la cuenta regresiva, ingrese la clave correcta es (C1234).
 
+
+## Como llegamos a la solucion
+- Se implementarios varias versiones que puedes ver en los commits que tenemos en nuestro repositorio donde encontraras el proceso y la forma en la que llegamos a la solucion actual implementando varios conocimientos adquiridos en clase donde encontramos las herrramientas para llegar a la solucion final.
 ## Requisitos
 
-- Entorno que admita la ejecución de aplicaciones de consola.
+- Entorno que admita la ejecución de aplicaciones de consola [Arduino](https://www.arduino.cc/en/software)
 - Se recomienda tener un teclado para interactuar con el programa.
 
 ## Ejemplo de Código
