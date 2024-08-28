@@ -42,16 +42,16 @@ void configurarTiempoApertura() {
       if (input == 'S') {
         tiempoApertura++;
         if (tiempoApertura > 40) tiempoApertura = 40;
-        Serial.print(" Tiempo actual: "); // Agrega un espacio antes de mostrar el tiempo
+        Serial.print(" Tiempo actual: ");
         Serial.println(tiempoApertura);
       } else if (input == 'B') {
         tiempoApertura--;
         if (tiempoApertura < 1) tiempoApertura = 1;
-        Serial.print(" Tiempo actual: "); // Agrega un espacio antes de mostrar el tiempo
+        Serial.print(" Tiempo actual: ");
         Serial.println(tiempoApertura);
       } else if (input == 'L') {
         configurado = true;
-        Serial.print(" Tiempo configurado: "); // Agrega un espacio antes de mostrar el tiempo
+        Serial.print(" Tiempo configurado: ");
         Serial.println(tiempoApertura);
         estadoActual = CUENTA_REGRESIVA;
       }
@@ -60,33 +60,36 @@ void configurarTiempoApertura() {
 }
 
 void contarTiempo() {
-  boolean conteoActivo = true; // Bandera para indicar si el conteo está activo
+  boolean conteoActivo = true;
   for (int i = tiempoApertura - 1; i >= 0 && conteoActivo; i--) {
-    Serial.print(i); // Imprime el número
-    Serial.print(" "); // Agrega un espacio
+    Serial.print(i);
+    Serial.print(" ");
 
     // Verifica si se ingresó la clave para detener el conteo
     if (Serial.available() > 0) {
       char input = Serial.read();
       if (input == 'C') {
-        delay(100);  // Pausa para asegurar que los caracteres estén disponibles
-        if (Serial.available() >= 4) { // Asegura que hay 4 caracteres disponibles
-          char clave[5]; // Almacena la clave ingresada
-          for (int j = 0; j < 4; j++) {
+        delay(100);  // Breve pausa para esperar la entrada de los caracteres
+        if (Serial.available() >= 4) {
+          char clave[6];  // Almacena la clave completa incluyendo la 'C'
+          clave[0] = input;  // 'C'
+          for (int j = 1; j < 5; j++) {
             clave[j] = Serial.read();
           }
-          clave[4] = '\0'; // Terminador de cadena
-          if (strcmp(clave, "1234") == 0) {
-            conteoActivo = false; // Desactiva el conteo si la clave es correcta
-            Serial.println(" Clave correcta. Deteniendo el conteo."); // Espacio antes del mensaje
+          clave[5] = '\0';  // Terminador de cadena
+
+          // Verifica si la clave es exactamente "C1234"
+          if (strcmp(clave, "C1234") == 0 && Serial.available() == 0) {
+            conteoActivo = false;
+            Serial.println(" Clave correcta. Deteniendo el conteo.");
             estadoActual = CONFIGURACION;
             configurado = false;
-            return; // Salir de la función contarTiempo() después de detener el conteo
+            return;
           } else {
-            Serial.println(" Clave incorrecta. Continuando el conteo."); // Espacio antes del mensaje
+            Serial.println(" Clave incorrecta o demasiados caracteres. Continuando el conteo.");
           }
         } else {
-          Serial.println(" Clave incompleta. Continuando el conteo."); // Espacio antes del mensaje
+          Serial.println(" Clave incompleta. Continuando el conteo.");
         }
       }
     }
@@ -94,18 +97,17 @@ void contarTiempo() {
     delay(1000);
   }
 
-  // Eliminar el segundo 0 extra
+  // Solo imprime el 0 si se llega al final del conteo y no se ha detenido
   if (conteoActivo) {
-    Serial.println(0); // Solo imprime 0 una vez
-    delay(1000); // Espera un segundo adicional antes de cambiar de estado
-    Serial.println(); // Imprime un salto de línea para separar las salidas
+    Serial.println(0);
+    delay(1000);
+    Serial.println(); // Salto de línea para separar las salidas
+    estadoActual = RADIACTIVO; // Cambia el estado después del conteo
   }
-  
-  estadoActual = RADIACTIVO; // Cambia el estado después del conteo
 }
 
 void emitirRadiacion() {
-  Serial.println(" RADIACIÓN NUCLEAR ACTIVA"); // Espacio antes del mensaje
+  Serial.println(" RADIACIÓN NUCLEAR ACTIVA");
   delay(2000);
   configurado = false;
   estadoActual = CONFIGURACION;
